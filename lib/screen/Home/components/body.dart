@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:plant_app/constants.dart';
+import 'package:plant_app/screen/Home/components/featured_plant.dart';
 import 'package:plant_app/screen/Home/components/header_with_search_box.dart';
-import 'package:plant_app/screen/Home/components/recomend_plant_card.dart';
+import 'package:plant_app/screen/Home/components/recomends_plants.dart';
 import 'package:plant_app/screen/Home/components/tite_with_more_btn.dart';
 
 class Body extends StatelessWidget {
@@ -12,33 +14,11 @@ class Body extends StatelessWidget {
         children: [
           HeaderWithSearchBox(),
           TitleWithMoreBtn(title: "Recommended", press: () {}),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Padding(
-              padding: const EdgeInsets.only(right: kDefaultPadding),
-              child: Row(
-                children: [
-                  RecomendPlantCard(
-                    image: "assets/images/image_1.png",
-                    title: "Suculenta",
-                    country: "Zurich",
-                    price: 400,
-                  ),
-                  RecomendPlantCard(
-                    image: "assets/images/image_2.png",
-                    title: "Violenta",
-                    country: "Zurich",
-                    price: 400,
-                  ),
-                  RecomendPlantCard(
-                    image: "assets/images/image_3.png",
-                    title: "Amorosa",
-                    country: "Zurich",
-                    price: 400,
-                  ),
-                ],
-              ),
-            ),
+          RecomendsPlants(),
+          TitleWithMoreBtn(title: "Featured Plant", press: () {}),
+          FeaturedPlant(),
+          SizedBox(
+            height: kDefaultPadding,
           )
         ],
       ),
