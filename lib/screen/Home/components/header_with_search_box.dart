@@ -5,13 +5,11 @@ import 'package:plant_app/constants.dart';
 class HeaderWithSearchBox extends StatelessWidget {
   const HeaderWithSearchBox({
     Key key,
-    @required this.size,
   }) : super(key: key);
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
       height: size.height * 0.2,

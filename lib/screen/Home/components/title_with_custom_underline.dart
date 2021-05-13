@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:plant_app/constants.dart';
 
 class TitleWithCustomUnderline extends StatelessWidget {
-  final String title;
+  final String text;
 
   const TitleWithCustomUnderline({
     Key key,
-    this.title,
+    this.text,
   }) : super(key: key);
 
   @override
@@ -17,7 +17,7 @@ class TitleWithCustomUnderline extends StatelessWidget {
       child: Stack(
         children: [
           Text(
-            title,
+            text,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,

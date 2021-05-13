@@ -3,8 +3,13 @@ import 'package:plant_app/constants.dart';
 import 'package:plant_app/screen/Home/components/title_with_custom_underline.dart';
 
 class TitleWithMoreBtn extends StatelessWidget {
+  final String title;
+  final VoidCallback press;
+
   const TitleWithMoreBtn({
     Key key,
+    this.press,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -13,13 +18,13 @@ class TitleWithMoreBtn extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
       child: Row(
         children: [
-          TitleWithCustomUnderline(title: "Recommended"),
+          TitleWithCustomUnderline(text: title),
           Spacer(),
           FlatButton(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             color: kPrimaryColor,
-            onPressed: () {},
+            onPressed: press,
             child: Text(
               "More",
               style: TextStyle(color: Colors.white),
