@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:plant_app/constants.dart';
+import 'package:plant_app/screen/details/details_screen.dart';
 
 class RecomendPlantCard extends StatelessWidget {
   const RecomendPlantCard({
@@ -14,7 +15,7 @@ class RecomendPlantCard extends StatelessWidget {
 
   final String image, title, country;
   final int price;
-  final VoidCallback press;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +76,68 @@ class RecomendPlantCard extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class RecomendsPlants extends StatelessWidget {
+  const RecomendsPlants({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Padding(
+        padding: const EdgeInsets.only(right: kDefaultPadding),
+        child: Row(
+          children: [
+            RecomendPlantCard(
+              image: "assets/images/image_1.png",
+              title: "Suculenta",
+              country: "Zurich",
+              price: 400,
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsScreen(),
+                  ),
+                );
+              },
+            ),
+            RecomendPlantCard(
+              image: "assets/images/image_2.png",
+              title: "Violenta",
+              country: "Zurich",
+              price: 400,
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsScreen(),
+                  ),
+                );
+              },
+            ),
+            RecomendPlantCard(
+              image: "assets/images/image_3.png",
+              title: "Amorosa",
+              country: "Zurich",
+              price: 400,
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailsScreen(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
