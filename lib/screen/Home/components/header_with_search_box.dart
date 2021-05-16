@@ -38,7 +38,9 @@ class HeaderWithSearchBox extends StatelessWidget {
                       ),
                 ),
                 Spacer(),
-                Image.asset("assets/images/logo.png"),
+                Image.asset(
+                  "assets/images/logo.png",
+                ),
               ],
             ),
           ),
