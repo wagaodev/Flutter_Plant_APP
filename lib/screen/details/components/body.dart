@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:plant_app/constants.dart';
+import 'package:plant_app/screen/details/components/icon_cart.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -32,6 +33,9 @@ class Body extends StatelessWidget {
                       ),
                       Spacer(),
                       IconCart(icon: "assets/icons/sun.svg"),
+                      IconCart(icon: "assets/icons/icon_2.svg"),
+                      IconCart(icon: "assets/icons/icon_3.svg"),
+                      IconCart(icon: "assets/icons/icon_4.svg"),
                     ],
                   ),
                 ),
@@ -62,44 +66,6 @@ class Body extends StatelessWidget {
           ),
         )
       ],
-    );
-  }
-}
-
-class IconCart extends StatelessWidget {
-  const IconCart({
-    Key key,
-    this.icon,
-  }) : super(key: key);
-
-  final String icon;
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: size.height * 0.03),
-      padding: EdgeInsets.all(kDefaultPadding / 2),
-      height: 62,
-      width: 62,
-      decoration: BoxDecoration(
-        color: kBackgroundColor,
-        borderRadius: BorderRadius.circular(22),
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, 10),
-            blurRadius: 22,
-            color: kPrimaryColor.withOpacity(0.2),
-          ),
-          BoxShadow(
-            offset: Offset(0, -15),
-            blurRadius: 22,
-            color: kPrimaryColor.withOpacity(0.2),
-          ),
-        ],
-      ),
-      child: SvgPicture.asset(icon),
     );
   }
 }
